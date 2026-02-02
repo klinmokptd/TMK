@@ -4,9 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Телемедицинские консультации с ГБУЗ МО МОКПТД</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        /* ШРИФТЫ ИЗ РЕПОЗИТОРИЯ */
+        @font-face {
+            font-family: 'Inter';
+            src: url('assets/fonts/Inter-Regular.woff2') format('woff2'),
+                 url('assets/fonts/Inter-Regular.woff') format('woff');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        @font-face {
+            font-family: 'Inter';
+            src: url('assets/fonts/Inter-Medium.woff2') format('woff2'),
+                 url('assets/fonts/Inter-Medium.woff') format('woff');
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        @font-face {
+            font-family: 'Inter';
+            src: url('assets/fonts/Inter-SemiBold.woff2') format('woff2'),
+                 url('assets/fonts/Inter-SemiBold.woff') format('woff');
+            font-weight: 600;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        @font-face {
+            font-family: 'Inter';
+            src: url('assets/fonts/Inter-Bold.woff2') format('woff2'),
+                 url('assets/fonts/Inter-Bold.woff') format('woff');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+        
         :root {
             --primary-blue: #1A5F9E;
             --secondary-blue: #2C8BD4;
@@ -35,8 +70,6 @@
             line-height: 1.7;
             color: var(--text-primary);
             background-color: var(--white);
-            font-weight: 400;
-            -webkit-font-smoothing: antialiased;
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
@@ -193,8 +226,10 @@
             gap: 10px;
         }
         
-        .subsection-title i {
+        .subsection-title .icon {
             color: var(--secondary-blue);
+            font-weight: bold;
+            font-size: 1.1rem;
         }
         
         .subsection-content {
@@ -248,7 +283,16 @@
             border-radius: var(--border-radius);
             margin: 1rem 0;
             border-left: 4px solid var(--secondary-blue);
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
+        
+        .contact-info::before {
+            content: '📞';
+            font-size: 1.2rem;
+        }
+        
         .contact-info strong {
             color: var(--primary-blue);
         }
@@ -329,7 +373,7 @@
 
     <!-- Оглавление -->
     <nav class="toc-container">
-        <h2 class="toc-title"><i class="fas fa-list"></i> Содержание</h2>
+        <h2 class="toc-title"><span class="icon">📋</span> Содержание</h2>
         <ul class="toc-list">
             <li><a href="#goal">Цель консультаций</a></li>
             <li><a href="#when">Когда может быть полезна консультация</a></li>
